@@ -541,11 +541,11 @@ void Visualizer_GLUT::VisualizeQuadCopter(shared_ptr<QuadDynamics> quad)
     V3D down = fl.cross(fr).norm();
     const float maxThrust = 4.5f;
     
-		VehicleCommand cmd = quad->GetCommands();
-    _glDraw->DrawArrow(pos + fl, pos + fl + down*cmd.desiredThrustsN[0]/maxThrust, FalseColorRGB(cmd.desiredThrustsN[0]/maxThrust));			// front left
-    _glDraw->DrawArrow(pos + fr, pos + fr + down* cmd.desiredThrustsN[1] / maxThrust, FalseColorRGB(cmd.desiredThrustsN[1] / maxThrust));	// front right
-    _glDraw->DrawArrow(pos - fr, pos- fr + down* cmd.desiredThrustsN[2] / maxThrust, FalseColorRGB(cmd.desiredThrustsN[2] / maxThrust));		// rear left
-    _glDraw->DrawArrow(pos - fl, pos - fl + down* cmd.desiredThrustsN[3] / maxThrust, FalseColorRGB(cmd.desiredThrustsN[3] / maxThrust));	// front right
+    VehicleCommand cmd = quad->GetCommands();
+    _glDraw->DrawArrow(pos + fr, pos + fr + down* cmd.desiredThrustsN[0]/ maxThrust, FalseColorRGB(cmd.desiredThrustsN[0]/maxThrust));      // front left
+    _glDraw->DrawArrow(pos + fl, pos + fl + down* cmd.desiredThrustsN[1] / maxThrust, FalseColorRGB(cmd.desiredThrustsN[1] / maxThrust));  // front right
+    _glDraw->DrawArrow(pos - fl, pos - fl + down* cmd.desiredThrustsN[2] / maxThrust, FalseColorRGB(cmd.desiredThrustsN[2] / maxThrust));    // rear left
+    _glDraw->DrawArrow(pos - fr, pos - fr + down* cmd.desiredThrustsN[3] / maxThrust, FalseColorRGB(cmd.desiredThrustsN[3] / maxThrust));  // rear right
   }
 }
 
