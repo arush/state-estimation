@@ -179,3 +179,12 @@ zFromX(5) = ekfState(5);
 
 Update(z, hPrime, R_GPS, zFromX);
 ```
+
+### Scenario 11 - With own controller code
+![https://snipboard.io/OdzI6r.jpg](https://snipboard.io/OdzI6r.jpg)
+
+```
+PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
+```
+
+The test passes but not sure the path is supposed to be so unpredictable. There is a particular jump that happens in the same location of the box on every circuit. Is this supposed to happen or is it gimbal lock?
