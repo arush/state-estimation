@@ -187,4 +187,4 @@ Update(z, hPrime, R_GPS, zFromX);
 PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
 ```
 
-The test passes but not sure the path is supposed to be so unpredictable. There is a particular jump that happens in the same location of the box on every circuit. Is this supposed to happen or is it gimbal lock?
+The test passes but the path is supposed to be wonky because its using simulated GPS data.
